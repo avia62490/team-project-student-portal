@@ -8,7 +8,7 @@
       };
     },
     created: function () {
-      axios.get('students/4.json').then(response => {
+      axios.get(`students/${this.$route.params.id}.json`).then(response => {
         console.log(response.data)
         this.studentInfo = response.data
       })
