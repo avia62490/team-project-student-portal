@@ -5,6 +5,7 @@ import LoginView from "../views/LoginView.vue";
 import LogoutView from "../views/LogoutView.vue";
 import ProfileView from "../views/ProfileView.vue";
 import StudentsShow from "../views/StudentsShow.vue";
+import StudentsIndex from "../views/StudentsIndex.vue";
 const routes = [
   {
     path: '/',
@@ -12,8 +13,8 @@ const routes = [
     component: HomeView
   },
   {
-    path: '/profile',
-    name: 'profile',
+    path: '/users/:id',
+    name: 'users',
     component: ProfileView
   },
   {
@@ -27,7 +28,8 @@ const routes = [
   { path: "/signup", name: "signup", component: SignupView },
   { path: "/login", name: "login", component: LoginView },
   { path: "/logout", name: "logout", component: LogoutView },
-  { path: "/students/:id", name: "logout", component: StudentsShow }
+  { path: "/students", name: "index", component: StudentsIndex },
+  { path: "/students/:id", name: "show", component: StudentsShow }
 
 ]
 
