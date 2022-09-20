@@ -16,7 +16,8 @@ export default {
       axios.post("http://localhost:3000/students.json", this.newStudent).then(response => {
         console.log(response.data)
         this.newStudent = response.data
-
+        console.log(this.newStudent.id)
+        this.$router.push(`/students/${this.newStudent.id}`);
 
       })
     }
@@ -28,7 +29,7 @@ export default {
   <div class="home">
     <h1>{{ message }}</h1>
 
-    <form v-on:sumbit.prevent="studentCreate()">
+    
       <p> First Name: <input type="text" v-model="newStudent.first_name" /></p>
       <p> Last Name: <input type="text" v-model="newStudent.last_name" /> </p>
       <p> Email: <input type="text" v-model="newStudent.email" /> </p>
@@ -43,7 +44,7 @@ export default {
       <!-- <input type="submit" value="Create" /> -->
       <br />
       <button v-on:click="studentCreate()">Create Student</button>
-    </form>
+
 
 
 
